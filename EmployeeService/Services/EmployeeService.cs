@@ -1,4 +1,5 @@
-﻿using EmployeeService.Model;
+﻿using EmployeeService.Interface;
+using EmployeeService.Model;
 using EmployeeService.Repository;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeService.Services
 {
-    public class EmployeeService
+    public class EmployeeService: IEmployeeService
     {
         private EmployeeRepository repository;
 
@@ -31,6 +32,11 @@ namespace EmployeeService.Services
         public Employee GetEmployeeById(int id)
         {
             return repository.GetEmployeeById(id);
+        }
+
+        public bool EmployeeExist(int id)
+        {
+            return repository.GetEmployeeById(id) != null ;
         }
     }
 }

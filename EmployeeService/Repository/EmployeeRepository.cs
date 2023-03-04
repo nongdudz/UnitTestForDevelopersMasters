@@ -1,4 +1,5 @@
 ﻿using EmployeeService.Model;
+using EmployeeService.Repository.Interface;
 using EmployeeService.Repository.TestData;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeService.Repository
 {
-    public class EmployeeRepository
+    public class EmployeeRepository: IEmployeeRepo
     {
         private EmployeeRepoData _employeeRepoData;
 
