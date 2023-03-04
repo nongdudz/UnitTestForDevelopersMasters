@@ -21,9 +21,7 @@
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://localhost:8081/repository/ngss-nuget-all/index.json": {},
-          "http://localhost:8081/repository/ngss-nuget-prerelease/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
