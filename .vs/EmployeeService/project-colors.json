@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "fdbac7d7-aa6e-4cce-b0d1-bf8b06f919c5": {
+      "ProjectGuid": "fdbac7d7-aa6e-4cce-b0d1-bf8b06f919c5",
+      "DisplayName": "EmployeeServiceTests",
+      "ColorIndex": 0
+    },
+    "3676fa59-80ea-486d-8b99-3465ed7add90": {
+      "ProjectGuid": "3676fa59-80ea-486d-8b99-3465ed7add90",
+      "DisplayName": "EmployeeService",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
