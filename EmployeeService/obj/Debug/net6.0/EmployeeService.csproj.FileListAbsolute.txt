@@ -1,0 +1,24 @@
+D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.csproj.AssemblyReference.cache
+D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.GeneratedMSBuildEditorConfig.editorconfig
+D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.AssemblyInfoInputs.cache
+D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.AssemblyInfo.cs
+D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.csproj.CoreCompileInputs.cache
+D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\bin\Debug\net6.0\EmployeeService.deps.json
+D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\bin\Debug\net6.0\EmployeeService.dll
+D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\bin\Debug\net6.0\EmployeeService.pdb
+D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.dll
+D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\refint\EmployeeService.dll
+D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.pdb
+D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\ref\EmployeeService.dll
+C:\Masters\UnitTest\UnitTestMasters-Assignment-main\EmployeeService\bin\Debug\net6.0\EmployeeService.deps.json
+C:\Masters\UnitTest\UnitTestMasters-Assignment-main\EmployeeService\bin\Debug\net6.0\EmployeeService.dll
+C:\Masters\UnitTest\UnitTestMasters-Assignment-main\EmployeeService\bin\Debug\net6.0\ref\EmployeeService.dll
+C:\Masters\UnitTest\UnitTestMasters-Assignment-main\EmployeeService\bin\Debug\net6.0\EmployeeService.pdb
+C:\Masters\UnitTest\UnitTestMasters-Assignment-main\EmployeeService\obj\Debug\net6.0\EmployeeService.csproj.AssemblyReference.cache
+C:\Masters\UnitTest\UnitTestMasters-Assignment-main\EmployeeService\obj\Debug\net6.0\EmployeeService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Masters\UnitTest\UnitTestMasters-Assignment-main\EmployeeService\obj\Debug\net6.0\EmployeeService.AssemblyInfoInputs.cache
+C:\Masters\UnitTest\UnitTestMasters-Assignment-main\EmployeeService\obj\Debug\net6.0\EmployeeService.AssemblyInfo.cs
+C:\Masters\UnitTest\UnitTestMasters-Assignment-main\EmployeeService\obj\Debug\net6.0\EmployeeService.csproj.CoreCompileInputs.cache
+C:\Masters\UnitTest\UnitTestMasters-Assignment-main\EmployeeService\obj\Debug\net6.0\EmployeeService.dll
+C:\Masters\UnitTest\UnitTestMasters-Assignment-main\EmployeeService\obj\Debug\net6.0\ref\EmployeeService.dll
+C:\Masters\UnitTest\UnitTestMasters-Assignment-main\EmployeeService\obj\Debug\net6.0\EmployeeService.pdb
