@@ -1,4 +1,4 @@
-﻿using EmployeeService.Model;
+﻿using EmpModel =  EmployeeService.Model;
 using System.Collections.Generic;
 using Xunit;
 using EmployeeSrv = EmployeeService.Services;
@@ -14,7 +14,7 @@ namespace EmployeeServiceTests.Services
             EmployeeSrv.EmployeeService employeeService = new EmployeeSrv.EmployeeService();
 
             //Act
-            var result = employeeService.CreateEmployee(new Employee { EmployeeId = 1, FirstName = "Edu", LastName = "Bayns" });
+            var result = employeeService.CreateEmployee(new EmpModel.Employee { EmployeeId = 1, FirstName = "Edu", LastName = "Bayns" });
 
             //Assert
             Assert.True(result > 0);
@@ -43,7 +43,7 @@ namespace EmployeeServiceTests.Services
             EmployeeSrv.EmployeeService employeeService = new EmployeeSrv.EmployeeService();
 
             //Act
-            var results = (List<Employee>)employeeService.GetEmployees();
+            var results = (List<EmpModel.Employee>)employeeService.GetEmployees();
 
             //Assert
             Assert.NotNull(results);
