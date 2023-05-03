@@ -1,11 +1,9 @@
-﻿using EmployeeManagement.Model;
+﻿using EmployeeManagement.Events;
+using EmployeeManagement.Model;
 using EmployeeManagement.Services;
+using EmployeeManagement.Services.Logger;
+using EmployeeManagement.Services.MessageBus;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployeeManagement.Controllers
 {
@@ -13,10 +11,16 @@ namespace EmployeeManagement.Controllers
     {
         private readonly IEmployeeService _employeeService;
         private readonly IPromotionService _promotionService;
-        public PromotionsController(IEmployeeService employeeService, IPromotionService promotionService)
+        private readonly EventDispatcher _eventDispatcher;
+
+        public PromotionsController(IEmployeeService employeeService,
+            IPromotionService promotionService,
+            IMessageBus messageBus,
+            IDomainLogger domainLogger)
         {
             _employeeService = employeeService;
             _promotionService = promotionService;
+            _eventDispatcher = new EventDispatcher(messageBus, domainLogger);
         }
 
         [HttpPost]
@@ -30,12 +34,14 @@ namespace EmployeeManagement.Controllers
                 return BadRequest();
             }
 
-            if (await _promotionService.PromoteInternalEmployeeAsync(internalEmployeeToPromote))
+            var response = await _promotionService.PromoteInternalEmployeeAsync(internalEmployeeToPromote);
+            if (response.Success)
             {
+                _eventDispatcher.Dispatch(response.Employee.Events);
                 return Ok(new PromotionResultDto()
                 {
-                    EmployeeId = internalEmployeeToPromote.EmployeeId,
-                    JobLevel = internalEmployeeToPromote.JobLevel
+                    EmployeeId = response.Employee.EmployeeId,
+                    JobLevel = response.Employee.JobLevel
                 });
             }
             else

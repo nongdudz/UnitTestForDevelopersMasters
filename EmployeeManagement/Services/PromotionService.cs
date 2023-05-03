@@ -1,12 +1,7 @@
 ﻿using EmployeeManagement.Model;
 using EmployeeManagement.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace EmployeeManagement.Services
 {
@@ -14,21 +9,24 @@ namespace EmployeeManagement.Services
     {
         private readonly HttpClient _httpClient;
         private readonly IEmployeeRepository _employeegementRepository;
+
         public PromotionService(HttpClient httpClient, IEmployeeRepository employeegementRepository)
         {
             _httpClient = httpClient;
             _employeegementRepository = employeegementRepository;
         }
 
-        public async Task<bool> PromoteInternalEmployeeAsync(InternalEmployee employee)
+        public async Task<Result> PromoteInternalEmployeeAsync(InternalEmployee employee)
         {
+            var result = new Result();
             if (await CheckIfInternalEmployeeIsEligibleForPromotion(employee.EmployeeId))
             {
                 employee.JobLevel++;
                 await _employeegementRepository.SaveChangesAsync();
-                return true;
+                result.Success = true;
+                return result;
             }
-            return false;
+            return result;
         }
 
         private async Task<bool> CheckIfInternalEmployeeIsEligibleForPromotion(

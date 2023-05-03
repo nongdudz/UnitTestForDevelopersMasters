@@ -1,6 +1,8 @@
 ﻿using EmployeeManagement.Controllers;
 using EmployeeManagement.Model;
 using EmployeeManagement.Services;
+using EmployeeManagement.Services.Logger;
+using EmployeeManagement.Services.MessageBus;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -15,8 +17,11 @@ namespace EmployeeManagementTests.Controllers
             //Arrange
             var employeeService_Mock = new Mock<IEmployeeService>();
             var promotionService_Mock = new Mock<IPromotionService>();
+            var busMock = new Mock<IBus>();
+            var messageBus = new MessageBus(busMock.Object);
+            var loggerMock = new Mock<IDomainLogger>();
 
-            var sut = new PromotionsController(employeeService_Mock.Object, promotionService_Mock.Object);
+            var sut = new PromotionsController(employeeService_Mock.Object, promotionService_Mock.Object, messageBus, loggerMock.Object);
 
             //Act
             var result = await sut.CreatePromotion(new PromotionForCreationDto());
@@ -39,12 +44,15 @@ namespace EmployeeManagementTests.Controllers
 
             var employeeService_Stub = new Mock<IEmployeeService>();
             var promotionService_Stub = new Mock<IPromotionService>();
+            var busMock = new Mock<IBus>();
+            var messageBus = new MessageBus(busMock.Object);
+            var loggerMock = new Mock<IDomainLogger>();
 
             employeeService_Stub.Setup(x => x.FetchInternalEmployeeAsync(It.IsAny<int>())).ReturnsAsync(internalEmployee);
 
-            promotionService_Stub.Setup(x => x.PromoteInternalEmployeeAsync(It.IsAny<InternalEmployee>())).ReturnsAsync(true);
+            promotionService_Stub.Setup(x => x.PromoteInternalEmployeeAsync(It.IsAny<InternalEmployee>())).ReturnsAsync(new Result { Success= true, Employee = internalEmployee });
 
-            var sut = new PromotionsController(employeeService_Stub.Object, promotionService_Stub.Object);
+            var sut = new PromotionsController(employeeService_Stub.Object, promotionService_Stub.Object, messageBus, loggerMock.Object);
 
             //Act
             var result = await sut.CreatePromotion(new PromotionForCreationDto() { EmployeeId = 1 });

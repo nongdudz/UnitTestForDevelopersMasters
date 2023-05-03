@@ -40,7 +40,7 @@ namespace EmployeeManagementTests.Services
             var response = await sut.PromoteInternalEmployeeAsync(internalEmployee);
 
             //Assert
-            response.Should().BeTrue();
+            response.Success.Should().BeTrue();
             internalEmployee.JobLevel.Should().Be(2);
         }
 
@@ -54,7 +54,7 @@ namespace EmployeeManagementTests.Services
             var sut = new PromotionService(httpClient, employeegementRepository_Mock.Object);
 
             //Act
-            Func<Task<bool>> service = () => sut.PromoteInternalEmployeeAsync(new InternalEmployee());
+            Func<Task<Result>> service = () => sut.PromoteInternalEmployeeAsync(new InternalEmployee());
 
             //Assert
             await service.Should().ThrowAsync<Exception>();
