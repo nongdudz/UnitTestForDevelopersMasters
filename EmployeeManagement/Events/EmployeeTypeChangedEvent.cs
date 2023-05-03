@@ -1,0 +1,16 @@
+﻿namespace EmployeeManagement.Events
+{
+    public class EmployeeTypeChangedEvent : IEvent
+    {
+        public int EmployeeId { get; set; }
+        public int OldType { get; set; }
+        public int NewType { get; set; }
+
+        public EmployeeTypeChangedEvent(int employeeId, int oldType, int newType)
+        {
+            EmployeeId = employeeId;
+            OldType = oldType;
+            NewType = newType;
+        }
+    }
+}
